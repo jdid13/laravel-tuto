@@ -10,6 +10,8 @@
 
                 <div> {{ $post -> excerpt }} </div>
         </article>
+
+        @endforeach
   
 </x-layout>
 
