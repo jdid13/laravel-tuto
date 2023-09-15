@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-
+use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +25,12 @@ Route::get('posts/{post:slug}', function (Post $post) {
     // Find a post by its slug and pass it to a view called "post"
     return view('post', [
         'post' => $post
+    ]);
+});
+
+Route::get('categories/{category:slug}', function (Category $category) {
+    // Find all posts belonging to a specific category
+    return view('posts', [
+        'posts' => $category->posts
     ]);
 });
